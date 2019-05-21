@@ -11,10 +11,10 @@
  * <example>
     :example.html
     <label id="myLabel" for="input" style="color: #0088cc; font-family: helvetica, arial, freesans, clean, sans-serif, width: 100px">Some Label</label>
-    :getCSSProperty.js
-    it('should demonstrate the getCSSProperty command', () => {
+    :getCssProperty.js
+    it('should demonstrate the getCssProperty command', () => {
         const elem = $('#myLabel')
-        const color = elem.getCSSProperty('color')
+        const color = elem.getCssProperty('color')
         console.log(color)
         // outputs the following:
         // {
@@ -28,7 +28,7 @@
         //     }
         // }
 
-        const font = elem.getCSSProperty('font-family')
+        const font = elem.getCssProperty('font-family')
         console.log(font)
         // outputs the following:
         // {
@@ -41,7 +41,7 @@
         //      }
         // }
 
-        var width = elem.getCSSProperty('width')
+        var width = elem.getCssProperty('width')
         console.log(width)
         // outputs the following:
         // {
@@ -57,7 +57,7 @@
     })
  * </example>
  *
- * @alias element.getCSSProperty
+ * @alias element.getCssProperty
  * @param {String} cssProperty css property name
  * @return {Object} The specified css of the element
  * @uses protocol/elements, protocol/elementIdCssProperty
@@ -67,7 +67,7 @@
 
 import { parseCSS } from '../../utils'
 
-export default async function getCSSProperty (cssProperty) {
+export default async function getCssProperty (cssProperty) {
     const cssValue = await this.getElementCSSValue(this.elementId, cssProperty)
     return parseCSS(cssValue, cssProperty)
 }
